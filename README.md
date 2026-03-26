@@ -1,16 +1,44 @@
-# React + Vite
+# TaskMaster-Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional task management app built with React and Tailwind CSS as a learning project.
 
-Currently, two official plugins are available:
+## Learning Journey
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was created to practice and master React fundamentals. As a learner, I've implemented the following features:
 
-## React Compiler
+### Features Completed:
+- **Add Tasks**: Form with title, description, priority (Low/Medium/High), category (Work/Personal/Urgent)
+- **Display Tasks**: Color-coded priority indicators (red=high, yellow=medium, green=low)
+- **Form Validation**: Title is required
+- **Two-way Binding**: Using useState for form fields
+- **Props**: Passing functions from parent to child components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Concepts Practiced:
+- useState for managing state
+- Controlled components (input, textarea, select with value + onChange)
+- Component communication via props
+- Array mapping for rendering lists
+- Tailwind CSS styling
 
-## Expanding the ESLint configuration
+### Features Coming Next:
+- Delete & Complete tasks
+- Filter by status/category/priority
+- Edit tasks functionality
+- LocalStorage persistence
+- Stats dashboard
+- Search/filter bar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+- React + Vite
+- Tailwind CSS
+- JavaScript
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## GitHub
+https://github.com/itz-dev-tasavvuf/TaskMaster-Pro
