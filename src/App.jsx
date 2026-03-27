@@ -6,6 +6,15 @@ function App() {
   const addTask = (task)=>{
     settask(prev=>[...prev,task])
   }
+  const altertask = (id) => {
+  settask((prev) =>
+    prev.map((t) =>
+      t.id === id
+        ? { ...t, isDone: !t.isDone }
+        : t
+    )
+  );
+};
   return (
     <div className="min-h-screen bg-black text-white p-6">
       <h1 className="text-amber-300 text-3xl font-bold select-none ">
@@ -13,7 +22,7 @@ function App() {
       </h1>
       <AddTaskForm addTask={addTask}/>
       <br />
-      <TaskList task={task}/>
+      <TaskList task={task} toggleTask={altertask}/>
       
     </div>
   );

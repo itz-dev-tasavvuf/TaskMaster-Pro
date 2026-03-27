@@ -12,7 +12,9 @@ function AddTaskForm({addTask}) {
       tittle : tittle,
       des : des,
       priority : Priority,
-      cata : cata
+      cata : cata,
+      id: Date.now(),
+      isDone : false
     }
   addTask(details)
     setTittle("")
