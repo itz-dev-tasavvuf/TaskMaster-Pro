@@ -1,6 +1,7 @@
 import React from "react";
 import { Trash2 } from "lucide-react";
-function TaskItem({ val, toggleTask, remove }) {
+import { SquarePen } from 'lucide-react';
+function TaskItem({ val, toggleTask, remove ,toggleedit }) {
   return (
     <div className="bg-[#1b1b1d] flex flex-col justify-between p-3 rounded-3xl h-60 w-50 relative">
       <div className="h-5 flex  justify-between ">
@@ -18,6 +19,9 @@ function TaskItem({ val, toggleTask, remove }) {
             size={14}
             className="group-hover:scale-110 transition-transform"
           />
+        </button>
+        <button className=" cursor-pointer" onClick={() => toggleedit(val)} >
+        <SquarePen />
         </button>
         <input
           type="checkbox"

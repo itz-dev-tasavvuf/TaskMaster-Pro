@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import AddTaskForm from "./components/AddTaskForm";
 import TaskList from "./components/TaskList";
+import Form from "./components/Form";
 function App() {
+  const [showForm, setShowForm] = useState(false);
   const [task, settask] = useState([])
+  const [editTaskData, setEditTaskData] = useState(null)
   const addTask = (task)=>{
     settask(prev=>[...prev,task])
+  }
+  const toggleedit = (taskie) => {
+   
+    setEditTaskData(taskie);
+     setShowForm(true)
   }
   const altertask = (id) => {
   settask((prev) =>
@@ -15,6 +23,21 @@ function App() {
     )
   ); 
   };
+ const editTask = (id, values) => {
+  settask((prev) =>
+    prev.map((t) =>
+      t.id === id
+        ? {
+            ...t,
+            tittle: values.tittle,
+            des: values.des,
+            priority: values.priority,
+            cata: values.cata,
+          }
+        : t
+    )
+  );
+};
 const remove = (id) => {
   settask((prev) => prev.filter((t) => t.id !== id));
 };
@@ -25,7 +48,7 @@ const remove = (id) => {
       </h1>
       <AddTaskForm addTask={addTask}/>
       <br />
-      <TaskList task={task} toggleTask={altertask} remove = {remove} />
+    {showForm ? <Form editTask={editTask} task={editTaskData} toggleedit={()=>{setShowForm(false)}} /> : <TaskList task={task} toggleTask={altertask} remove = {remove} toggleedit={toggleedit} />} 
       
     </div>
   );

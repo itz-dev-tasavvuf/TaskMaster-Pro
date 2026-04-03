@@ -9,7 +9,7 @@ const filters = [
   "Work",
   "Personal",
 ];
-function TaskList({ task, toggleTask, remove }) {
+function TaskList({ task, toggleTask, remove , toggleedit }) {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const base =
@@ -77,6 +77,7 @@ function TaskList({ task, toggleTask, remove }) {
             val={val}
             toggleTask={toggleTask}
             remove={remove}
+            toggleedit={toggleedit}
           />
         ))}
       </div>
